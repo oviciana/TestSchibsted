@@ -74,24 +74,52 @@
 
 
 window.onload = function () {
+  getJson();
 
-  var elements = document.querySelectorAll('dt');
-
-  addElemClass();
-
-  document.onclick = function (e) {
-    var elemClicked = e.target;
-    //    console.log("han pulsado click en " + elemClicked.nodeName)
+  document.onclick = function (selElem) {
+    var elemClicked = selElem.target;
     if (elemClicked.nodeName === 'DT') {
-      addElemClass();
-      elemClicked.nextElementSibling.className = 'TestAccordion-content--active';
+      assignClassElemDL();
+      elemClicked.nextElementSibling.className = 'TestAccordion-elemDD--active';
     }
   };
 
-  function addElemClass() {
+  function getJson() {
+    fetch('sections.json').then(function (response) {
+      return response.json();
+    }).then(function (infoJson) {
+      var pos = Math.round(Math.random() * (infoJson.length - 1));
+      var _infoJson$pos = infoJson[pos],
+          title = _infoJson$pos.title,
+          content = _infoJson$pos.content;
+
+      addJsonElemDL(title, content);
+      assignClassElemDL();
+    }).catch(function (error) {
+      return console.log(error);
+    });
+  }
+
+  function addJsonElemDL(newSection, newContent) {
+    var nodeElems = document.querySelector('.TestAccordion');
+    var newDT = document.createElement("dt");
+    var textDT = document.createTextNode(newSection);
+    newDT.appendChild(textDT);
+    nodeElems.appendChild(newDT);
+
+    var newDD = document.createElement("dd");
+    var newP = document.createElement("p");
+    var textP = document.createTextNode(newContent);
+    newP.appendChild(textP);
+    newDD.appendChild(newP);
+    nodeElems.appendChild(newDD);
+  }
+
+  function assignClassElemDL() {
+    var elements = document.querySelectorAll('dt');
     Array.from(elements).map(function (elem) {
-      elem.className = 'TestAccordion-title';
-      elem.nextElementSibling.className = 'TestAccordion-content';
+      elem.className = 'TestAccordion-elemDT';
+      elem.nextElementSibling.className = 'TestAccordion-elemDD';
     });
   }
 };
