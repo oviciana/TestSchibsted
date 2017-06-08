@@ -13,12 +13,13 @@ module.exports = {
         inline: true
     },
     module: {
-        loaders: [{
-            test: /\.js$/,
-            loader: 'babel-loader',
-            query: {
-              presets: ['es2015']
-            }
-        }]
+        loaders: [
+          {
+            test: /\.js$/, loader: 'babel-loader', query: {presets: ['es2015']}, exclude: /node_modules/
+          },
+          {
+            test: /\.scss$/, loader:'style-loader!css-loader!sass-loader'
+          }
+        ]
     }
 }
