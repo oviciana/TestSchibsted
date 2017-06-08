@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -90,7 +90,7 @@ module.exports = assignClassElemDL;
 "use strict";
 
 
-var _addJsonElemDL = __webpack_require__(4);
+var _addJsonElemDL = __webpack_require__(3);
 
 var _addJsonElemDL2 = _interopRequireDefault(_addJsonElemDL);
 
@@ -156,6 +156,32 @@ if(false) {
 "use strict";
 
 
+function addJsonElemDL(newSection, newContent) {
+  var nodeElems = document.querySelector('.TestAccordion');
+  var newDT = document.createElement("dt");
+  var textDT = document.createTextNode(newSection);
+  newDT.appendChild(textDT);
+
+  nodeElems.appendChild(newDT);
+
+  var newDD = document.createElement("dd");
+  var newP = document.createElement("p");
+  var textP = document.createTextNode(newContent);
+  newP.appendChild(textP);
+  newDD.appendChild(newP);
+
+  nodeElems.appendChild(newDD);
+}
+
+module.exports = addJsonElemDL;
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
 var _getJson = __webpack_require__(1);
 
 var _getJson2 = _interopRequireDefault(_getJson);
@@ -180,32 +206,6 @@ window.onload = function () {
     }
   };
 };
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function addJsonElemDL(newSection, newContent) {
-  var nodeElems = document.querySelector('.TestAccordion');
-  var newDT = document.createElement("dt");
-  var textDT = document.createTextNode(newSection);
-  newDT.appendChild(textDT);
-
-  nodeElems.appendChild(newDT);
-
-  var newDD = document.createElement("dd");
-  var newP = document.createElement("p");
-  var textP = document.createTextNode(newContent);
-  newP.appendChild(textP);
-  newDD.appendChild(newP);
-
-  nodeElems.appendChild(newDD);
-}
-
-module.exports = addJsonElemDL;
 
 /***/ }),
 /* 5 */

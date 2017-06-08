@@ -1,5 +1,5 @@
-import addJsonElemDL from './addJsonElemDL.js';
-import assignClassElemDL from './assignClassElemDL.js';
+import addJsonElemDL from '../components/addJsonElemDL.js';
+import assignClassElemDL from '../components/assignClassElemDL.js';
 
 function getJson() {
   fetch('sections.json')

@@ -1,6 +1,6 @@
 require('../scss/styles.scss');
 import getJson from './services/getJson.js';
-import assignClassElemDL from './services/assignClassElemDL.js';
+import assignClassElemDL from './components/assignClassElemDL.js';
 
 window.onload = () => {
 	getJson();
