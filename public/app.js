@@ -73,15 +73,24 @@
 "use strict";
 
 
-function assignClassElemDL() {
-  var elements = document.querySelectorAll('dt');
-  Array.from(elements).map(function (elem) {
-    elem.className = 'TestAccordion-elemDT';
-    elem.nextElementSibling.className = 'TestAccordion-elemDD';
-  });
+function addJsonElemDL(newSection, newContent, classNameDL) {
+  var nodeElems = document.querySelector(classNameDL);
+  var newDT = document.createElement("dt");
+  var textDT = document.createTextNode(newSection);
+  newDT.appendChild(textDT);
+
+  nodeElems.appendChild(newDT);
+
+  var newDD = document.createElement("dd");
+  var newP = document.createElement("p");
+  var textP = document.createTextNode(newContent);
+  newP.appendChild(textP);
+  newDD.appendChild(newP);
+
+  nodeElems.appendChild(newDD);
 }
 
-module.exports = assignClassElemDL;
+module.exports = addJsonElemDL;
 
 /***/ }),
 /* 1 */
@@ -90,36 +99,47 @@ module.exports = assignClassElemDL;
 "use strict";
 
 
-var _addJsonElemDL = __webpack_require__(3);
-
-var _addJsonElemDL2 = _interopRequireDefault(_addJsonElemDL);
-
-var _assignClassElemDL = __webpack_require__(0);
-
-var _assignClassElemDL2 = _interopRequireDefault(_assignClassElemDL);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function getJson() {
-  fetch('sections.json').then(function (response) {
-    return response.json();
-  }).then(function (infoJson) {
-    var pos = Math.round(Math.random() * (infoJson.length - 1));
-    var _infoJson$pos = infoJson[pos],
-        title = _infoJson$pos.title,
-        content = _infoJson$pos.content;
-
-    (0, _addJsonElemDL2.default)(title, content);
-    (0, _assignClassElemDL2.default)();
-  }).catch(function (error) {
-    return console.log(error);
+function assignClassElemDL(classNameDT, classNameDD) {
+  var elements = document.querySelectorAll('dt');
+  Array.from(elements).map(function (elem) {
+    elem.className = classNameDT;
+    elem.nextElementSibling.className = classNameDD;
   });
+}
+
+module.exports = assignClassElemDL;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function getJson(dataJson, fileJson) {
+	var promise = new Promise(function (resolve, reject) {
+		fetch(fileJson).then(function (response) {
+			return response.json();
+		}).then(function (infoJson) {
+			var pos = Math.round(Math.random() * (infoJson.length - 1));
+			var _infoJson$pos = infoJson[pos],
+			    title = _infoJson$pos.title,
+			    content = _infoJson$pos.content;
+
+			dataJson.push(title);
+			dataJson.push(content);
+			resolve(dataJson);
+		}).catch(function (error) {
+			return alert('Not find or error in file Json name = "' + fileJson + '"');
+		});
+	});
+	return promise;
 }
 
 module.exports = getJson;
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -150,61 +170,49 @@ if(false) {
 }
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-function addJsonElemDL(newSection, newContent) {
-  var nodeElems = document.querySelector('.TestAccordion');
-  var newDT = document.createElement("dt");
-  var textDT = document.createTextNode(newSection);
-  newDT.appendChild(textDT);
-
-  nodeElems.appendChild(newDT);
-
-  var newDD = document.createElement("dd");
-  var newP = document.createElement("p");
-  var textP = document.createTextNode(newContent);
-  newP.appendChild(textP);
-  newDD.appendChild(newP);
-
-  nodeElems.appendChild(newDD);
-}
-
-module.exports = addJsonElemDL;
-
-/***/ }),
 /* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _getJson = __webpack_require__(1);
+var _getJson = __webpack_require__(2);
 
 var _getJson2 = _interopRequireDefault(_getJson);
 
-var _assignClassElemDL = __webpack_require__(0);
+var _addJsonElemDL = __webpack_require__(0);
+
+var _addJsonElemDL2 = _interopRequireDefault(_addJsonElemDL);
+
+var _assignClassElemDL = __webpack_require__(1);
 
 var _assignClassElemDL2 = _interopRequireDefault(_assignClassElemDL);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-__webpack_require__(2);
+__webpack_require__(3);
 
 
 window.onload = function () {
-  (0, _getJson2.default)();
+	var classNameDL = '.TestAccordion';
+	var classNameDT = 'TestAccordion-elemDT';
+	var classNameDD = 'TestAccordion-elemDD';
+	var classNameActive = 'TestAccordion-elemDD--active';
 
-  document.onclick = function (selElem) {
-    var elemClicked = selElem.target;
-    if (elemClicked.nodeName === 'DT') {
-      (0, _assignClassElemDL2.default)();
-      elemClicked.nextElementSibling.className = 'TestAccordion-elemDD--active';
-    }
-  };
+	var dataJson = [];
+	var fileJson = "sections.json";
+	(0, _getJson2.default)(dataJson, fileJson).then(function () {
+		(0, _addJsonElemDL2.default)(dataJson[0], dataJson[1], classNameDL);
+		(0, _assignClassElemDL2.default)(classNameDT, classNameDD);
+	}).catch((0, _assignClassElemDL2.default)(classNameDT, classNameDD));
+
+	document.onclick = function (selElem) {
+		var elemClicked = selElem.target;
+		if (elemClicked.nodeName === 'DT') {
+			(0, _assignClassElemDL2.default)(classNameDT, classNameDD);
+			elemClicked.nextElementSibling.className = classNameActive;
+		}
+	};
 };
 
 /***/ }),

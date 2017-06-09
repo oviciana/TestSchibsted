@@ -4,9 +4,10 @@
   "description": "create an accordion",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --watch --colors",
-    "server": "webpack-dev-server --progress --colors"
+    "server": "webpack-dev-server --progress --colors",
+    "test": "karma start --single-run"
+
   },
   "author": "oscar viciana",
   "license": "ISC",
@@ -15,6 +16,8 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.4",
+    "karma": "^1.7.0",
+    "karma-cli": "^1.0.1",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",

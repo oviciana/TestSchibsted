@@ -1,14 +1,14 @@
-function addJsonElemDL(newSection, newContent) {
-  var nodeElems = document.querySelector('.TestAccordion');
+function addJsonElemDL(newSection, newContent, classNameDL) {
+  var nodeElems = document.querySelector(classNameDL);
   var newDT = document.createElement("dt");
-  var textDT = document.createTextNode(newSection);
+  const textDT = document.createTextNode(newSection);
   newDT.appendChild(textDT);
   
   nodeElems.appendChild(newDT);
 
   var newDD = document.createElement("dd");
   var newP = document.createElement("p");
-  var textP = document.createTextNode(newContent);
+  const textP = document.createTextNode(newContent);
   newP.appendChild(textP);
   newDD.appendChild(newP);
   
