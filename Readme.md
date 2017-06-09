@@ -6,9 +6,7 @@
 
 ## Description
 
-This is the final web development project applying techniques learned in the [Skylab Coders](http://www.skylabcoders.com/en/) Bootcamps (Winter 2017 Edition).
-
-
+Possible solution to the problem suggested at https://github.com/scm-spain/Frontend-Exercise.
 
 
 ## Coding Style
@@ -22,24 +20,19 @@ All the code has been developed under the [JavaScript Standard Style](http://sta
 To install dependencies you can just do
 
 ```
-bower install
-node install
+
 ```
 
 
-To run local server you need to create a `.env` w/ the following variables...
+To run local server ...
 
-    DB_URI=mongodb://localhost:27017/XXXXX
-    PASSXXXXXXXXXXXXXXXX
+```
+
+```
 
 With this, to start the project you just can do... 
 
-    npm run dev
-
-To run remotely (in heroku) the proper environment variables should be set before deploying...
-
-    DB_URI=mongodb://<%USER%>:<%PASS%>@XXXXXXXXX.mlab.com:00000/xxxxxxxxxxx
-    heroku config:set PASS=password email from:
+    npm ...
 
 
 ## Built With
@@ -56,4 +49,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* [SkylabCoders](https://github.com/SkylabCoders)
+* [SkylabCoders Academy](https://github.com/SkylabCoders) for teaching me to continue learning.
