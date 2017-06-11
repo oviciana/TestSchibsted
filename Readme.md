@@ -7,6 +7,7 @@
 ## Description
 
 Possible solution to the problem suggested at https://github.com/scm-spain/Frontend-Exercise.
+For extra bonus the application use a section.json file.
 
 
 ## Coding Style
@@ -20,24 +21,25 @@ All the code has been developed under the [JavaScript Standard Style](http://sta
 To install dependencies you can just do
 
 ```
-
+clone this report and execute the next instruction in your local folder
+npm install
+execute this command for build app.js
+npm run build
 ```
 
 
-To run local server ...
+To run local server execute this command...
 
 ```
-
+npm run server
+in your browser launch localhost:8080/public
 ```
-
-With this, to start the project you just can do... 
-
-    npm ...
 
 
 ## Built With
 
 * [SublimeText](http://https://www.sublimetext.com/) - Text editor
+* [webpack](https://webpack.js.org) - module bundler
 
 ## Authors
 
