@@ -1,13 +1,11 @@
-[![HTML5, CSS3 and JS](http://3.bp.blogspot.com/-hHGPJbbvfYA/VEBD0PbjaaI/AAAAAAAAACk/zjYRUQWRjYQ/s1600/HTML5-CSS3-JS.jpg)](https://www.w3.org/)
-[![NodeJs](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxcvI2vvtITqK5Xz-QGiUi7kb9bWjlkE-kOQV-lwbXg1NrJo2A)](https://nodejs.org/)
-
 # Test Schibsted
 
 ## Description
 
-Possible solution to the problem suggested at https://github.com/scm-spain/Frontend-Exercise.
-For extra bonus the application use a section.json file.
-gh-pages -> https://oviciana.github.io/TestSchibsted/
+Possible solution to the problem suggested at [https://github.com/scm-spain/Frontend-Exercise.](https://github.com/scm-spain/Frontend-Exercise)
+For extra bonus the application use a section.json file. You can see the published readme file in gh-pages -> [https://oviciana.github.io/TestSchibsted/](https://oviciana.github.io/TestSchibsted/)
+
+And you can execute the published application in gh-pages -> [https://oviciana.github.io/TestSchibsted/public/](https://oviciana.github.io/TestSchibsted/public/)
 
 ## Coding Style
 
