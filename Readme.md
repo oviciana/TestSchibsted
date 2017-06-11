@@ -1,6 +1,3 @@
-[![HTML5, CSS3 and JS](http://3.bp.blogspot.com/-hHGPJbbvfYA/VEBD0PbjaaI/AAAAAAAAACk/zjYRUQWRjYQ/s1600/HTML5-CSS3-JS.jpg)](https://www.w3.org/)
-[![NodeJs](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxcvI2vvtITqK5Xz-QGiUi7kb9bWjlkE-kOQV-lwbXg1NrJo2A)](https://nodejs.org/)
-
 # Test Schibsted
 
 ## Description
