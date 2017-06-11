@@ -7,7 +7,11 @@
 
 Possible solution to the problem suggested at https://github.com/scm-spain/Frontend-Exercise.
 For extra bonus the application use a section.json file.
+You can see the published readme file in
 gh-pages -> https://oviciana.github.io/TestSchibsted/
+
+And you can execute the published application in
+gh-pages -> https://oviciana.github.io/TestSchibsted/public
 
 ## Coding Style
 
