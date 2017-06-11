@@ -1,6 +1,5 @@
-[![HTML5, CSS3 and JS](https://github.com/Iggy-Codes/logo-images/blob/master/logos/html5-css3-js.png)](https://www.w3.org/)
+[![HTML5, CSS3 and JS](http://3.bp.blogspot.com/-hHGPJbbvfYA/VEBD0PbjaaI/AAAAAAAAACk/zjYRUQWRjYQ/s1600/HTML5-CSS3-JS.jpg)](https://www.w3.org/)
 [![NodeJs](https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxcvI2vvtITqK5Xz-QGiUi7kb9bWjlkE-kOQV-lwbXg1NrJo2A)](https://nodejs.org/)
-
 
 # Test Schibsted
 
@@ -8,7 +7,7 @@
 
 Possible solution to the problem suggested at https://github.com/scm-spain/Frontend-Exercise.
 For extra bonus the application use a section.json file.
-
+gh-pages -> https://oviciana.github.io/TestSchibsted/
 
 ## Coding Style
 
