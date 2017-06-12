@@ -19,11 +19,10 @@ To install dependencies you can just do
 
 ```
 clone this report and execute the next instruction in your local folder
-npm install
+    npm install
 execute this command for build app.js
-npm run build
+    npm run build
 ```
-
 
 To run local server execute this command...
 
@@ -32,6 +31,15 @@ npm run server
 in your browser launch localhost:8080/public
 ```
 
+## Tests
+
+To launch tests you can just do 
+
+```
+    npm run test
+If you want launch the text debugger execute this command
+    npm run test:watch
+```
 
 ## Built With
 
